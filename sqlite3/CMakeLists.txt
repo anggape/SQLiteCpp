@@ -9,7 +9,12 @@
 add_library(sqlite3
  sqlite3.c
  sqlite3.h
+ sqlite3_uuid.c
 )
+target_compile_definitions(
+  sqlite3
+  PUBLIC
+    SQLITE_CORE)
 
 if (WIN32)
     if (BUILD_SHARED_LIBS)
